@@ -1,0 +1,60 @@
+extends layouts/base
+
+block content
+    h1.title Clients
+    nav.level
+        .level-left
+            .level-item
+                p.subtitle.is-5
+                strong #{clients.length} client(s)
+            .level-item
+                a.button.is-primary(href='/account/clients/add') Add
+            .level-item.is-hidden-tablet-only
+                .field.has-addons
+                    p.control
+                        input(class='input', type='text', placeholder='Name, Email, Address...')
+                    p.button Search
+        .level-right
+            a.button.is-primary(href='#') Import
+    table.table.is-hoverable.is-fullwidth
+        thead
+            tr
+                th Name
+                th Email
+                th Created
+                th Action
+        tbody
+            each client in clients
+                tr
+                    td
+                        a(href=client.url) #{client.name}
+                    td
+                        code #{client.email}
+                    td #{client.created.toLocaleDateString()}
+                    td
+                        .buttons
+                            a.button.is-small(href=client.url) Edit
+        tfoot
+            tr
+                th Name
+                th Email
+                th Created
+                th Action
+    nav.pagination
+        a.pagination-previous Previous
+        a.pagination-next Next
+        ul.pagination-list
+            li
+                a.pagination-link 1
+            li
+                span.pagination-ellipsis &hellip;
+            li
+                a.pagination-link 45
+            li
+                a.pagination-link.is-current 46
+            li
+                a.pagination-link 46
+            li
+                span.pagination-ellipsis &hellip;
+            li
+                a.pagination-link 86

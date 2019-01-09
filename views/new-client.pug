@@ -1,0 +1,43 @@
+extends layouts/base
+
+block content
+    nav.breadcrumb
+        ul
+            li
+                a(href='/account/clients') Clients
+            li.is-active
+                a(href='/accounts/clients/add') Add New Client
+    form(method='POST', action='/account/clients')
+        .field
+            .field
+                label.label First Name
+                .control
+                    input.input.input.is-large(type='text', name='first_name' placeholder='John')
+            .field
+                label.label Last Name
+                    input.input.input.is-large(type='text', name='last_name', placeholder='Doe')
+            .field
+                label.label Email
+                    input.input.input.is-large(type='email', name='email', placeholder='john@doe.io')
+            .field
+                label.label Address
+                    input.input.input.is-large(type='text', name='address', placeholder='1234 Santa Road')
+            .columns.is-multiline
+                .column.is-12-tablet.is-3-desktop
+                    .field
+                        label.label City
+                            input.input.input.is-large(type='text', name='city', placeholder='San Francisco')
+                .column.is-12-tablet.is-3-desktop
+                    .field
+                        label.label State
+                            input.input.input.is-large(type='text', name='state', placeholder='CA')
+                .column.is-12-tablet.is-3-desktop
+                    .field
+                        label.label Postal Code
+                            input.input.input.is-large(type='text', name='postal', placeholder='94105')
+                .column.is-12-tablet.is-3-desktop
+                    .field
+                        label.label Country
+                            input.input.input.is-large(type='text', name='country', placeholder='USA')
+            .field
+                button.button.is-primary(type='submit') Add

@@ -1,0 +1,14 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device, initial-scale=1')
+        title= title
+        link(rel='stylesheet', href='/stylesheets/bulma.css')
+    body
+        include ../layouts/top-nav
+        section.section
+            .columns
+                include ../layouts/navigation
+                .column
+                    block content

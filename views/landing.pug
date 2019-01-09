@@ -1,0 +1,81 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+        title= title
+        link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+        link(rel='stylesheet', href='/stylesheets/bulma.css')
+        link(rel='stylesheet', href='/stylesheets/hero.css')
+        link(rel='stylesheet', href='/stylesheets/modal-fx.min.css')
+    body
+        section.hero.is-primary.is-medium.is-bold
+            .hero-head
+                nav.navbar
+                    .container
+                        .navbar-brand
+                            a.navbar-item(href='/')
+                                img(src='http://bulma.io/images/bulma-type-white.png', alt='Logo')
+                            span.navbar-burger.burger(data-target='navbarMenu')
+                                span
+                                span
+                                span
+                        #navbarMenu.navbar-menu
+                            .navbar-end
+                                .tabs.is-right
+                                    ul
+                                        li
+                                            a(href='/account/login') Login
+                                        li
+                                            a(href='/account/register') Register
+                                    span.navbar-item
+                                        a.button.is-white.is-outlined(href='#')
+                                            span.icon
+                                                i.fa.fa-github
+                                            span(title='Hello from the other side') Source code
+            .hero-body
+                .container.has-text-centered
+                    h1.title
+                        | Client-Developer Relation Manager
+                    h2.subtitle
+                        | Effortlessly manage the progression of your projects and connection to your clients all
+                        | in one place. We make it easier for you to enhance your organizational workflow so you can focus on
+                        | development and deployment.
+        .box.cta
+            p.has-text-centered In a matter of seconds, you can quickly register an account and start improving your workflow!
+        section.container
+            .columns.features
+                .column.is-4
+                    .card.is-shady
+                        .card-image.has-text-centered
+                            i.fa.fa-bolt
+                        .card-content
+                            .content
+                                h4 Effortless
+                                p We offer very low overhead so you can quickly begin to use our services to better
+                                    |  enhance your workflow and keep you organized. Not to mention we are free.
+                .column.is-4
+                    .card.is-shady
+                        .card-image.has-text-centered
+                            i.fa.fa-briefcase
+                        .card-content
+                            .content
+                                h4 Projects
+                                p We make it easy to create new projects and attach clients to them so you can better
+                                    |  visualize and track numerous projects and parties at hand.
+                .column.is-4
+                    .card.is-shady
+                        .card-image.has-text-centered
+                            i.fa.fa-users
+                        .card-content
+                            .content
+                                h4 Clients
+                                p You can very quickly add new clients and attach them to new or existing projects. We
+                                    | do our best to make sure to easily take the load off you.
+        footer.footer
+            .container
+                .content.has-text-centered
+                    p
+                        a.icon(href='#')
+                            i.fa.fa-github
+        script(src='/javascripts/bulma.js')

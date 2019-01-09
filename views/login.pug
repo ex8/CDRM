@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device, initial-scale=1')
+        title= title
+        link(rel='stylesheet', href='/stylesheets/bulma.css')
+        link(rel='stylesheet', href='/stylesheets/login.css')
+    body
+        section.hero.is-primary.is-fullheight
+            .hero-body
+                .container.has-text-centered
+                    .column.is-4.is-offset-4
+                        h3.title Login
+                        .box
+                            figure.avatar
+                                img(src='https://placehold.it/128x128')
+                            if (message.length > 0)
+                                .notification.is-danger #{message}
+                            form(method='POST')
+                                .field
+                                    .control
+                                        input.input.is-primary.is-large(type='text', name='username',
+                                        placeholder='Username' autofocus required)
+                                .field
+                                    .control
+                                        input.input.is-primary.is-large(type='password', name='password'
+                                        placeholder='Password' required)
+                                button.button.is-block.is-primary.is-outlined.is-large.is-fullwidth(type='submit') Proceed
+                        p.has-text-grey
+                        a(href='/account/register') Register
+                        | &nbsp;·&nbsp;
+                        a(href='/account/reset-password') Reset Password
